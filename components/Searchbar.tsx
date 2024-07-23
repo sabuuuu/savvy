@@ -1,5 +1,6 @@
 "use client"
 
+import { scarpeAndStoreProduct } from '@/lib/actions'
 import React ,{FormEvent, useState} from 'react'
 
 const Searchbar = () => {
@@ -18,7 +19,7 @@ const Searchbar = () => {
         }
         return false
     }
-    const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async(event:FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
         const isValid = isValidLink(searchPrompt)
@@ -26,6 +27,8 @@ const Searchbar = () => {
 
         try {
             setLoading(true)
+
+            const product = await scarpeAndStoreProduct(searchPrompt)
         } catch (error) {
             console.log(error)
         }finally{

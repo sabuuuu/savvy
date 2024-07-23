@@ -1,3 +1,7 @@
+import axios from "axios"
+import * as cheerio from "cheerio"
+import { extractCurrency, extractPrice } from "../utils"
+
 export async function scrapeAmazonProduct(url:string) {
     if(!url) return
 
@@ -18,8 +22,33 @@ export async function scrapeAmazonProduct(url:string) {
     }
 
     try {
-        
+        const response =await axios.get(url, options)
+        const $ = cheerio.load(response.data)
+
+        const title = $('#productTitle').text().trim()
+        const currentPrice = extractPrice(
+            $('.priceToPay span.a-price-whole'),
+            $('.a.size.base.a-color-price'),
+            $('.a-button-selected .a-color-base'),
+        );
+      
+        const originalPrice = extractPrice(
+            $('#priceblock_ourprice'),
+            $('.a-price.a-text-price span.a-offscreen'),
+            $('#listPrice'),
+            $('#priceblock_dealprice'),
+            $('.a-size-base.a-color-price')
+        );
+      
+        const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
+        const images = 
+                      $('#imgBlkFront').attr('data-a-dynamic-image') || 
+                      $('#landingImage').attr('data-a-dynamic-image') ||$('img').attr('src') || $('#landingImage').attr('src') ||
+                      '{}'
+        const imageUrls = Object.keys(JSON.parse(images))
+        const currency = extractCurrency($('.a-price-symbol'), $('.a-price-symbol', '#priceblock_ourprice'));
+        console.log({title, currentPrice, originalPrice, outOfStock, imageUrls ,currency})
     } catch (error :any) {
-        throw new Error(`An error occured while trying to scrape the product :${error.message}`)
+        throw new Error(`Failed to scrape the product :${error.message}`)
     }
 }
