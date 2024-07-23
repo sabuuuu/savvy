@@ -6,6 +6,10 @@ export async function scarpeAndStoreProduct(productUrl: string){
 
     try {
         const scrapedProduct= await scrapeAmazonProduct(productUrl)
+
+        if(!scarpeAndStoreProduct) return;
+
+        
     } catch (error :any) {
         throw new Error(`An error occured while trying to scrape the product :${error.message}`)
     }
