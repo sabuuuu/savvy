@@ -21,7 +21,7 @@ const ProductDetails = async({params :{ id } }:Props) => {
     <section className='flex flex-col gap-16 flex-wrap px-6 md:px-20 py-24'>
       <div className='flex gap-28 xl:flex-row flex-col '>
         <div className='flex items-center justify-center border border-[#cfdeb8] py-4 px-16 lg:py-0 rounded-3xl'>
-          <img src={product.image} alt={product.title} className='w-80 rounded-2xl'/>
+          <img src={product.image} alt={product.title} className='w-80 h-auto rounded-2xl'/>
         </div>
         <div className='flex-1 flex flex-col'>
           <div className='flex justify-between items-start gap-5 flex-wrap pb-6'>
