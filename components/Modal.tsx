@@ -21,14 +21,17 @@ const Modal = ({ productId }: Props) => {
     }
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        // e.preventDefault();
-        // setIsSubmitting(true);
+        e.preventDefault();
+        setIsSubmitting(true);
     
         // await addUserEmailToProduct(productId, email);
-    
+
+        setTimeout(() => {
+            setIsSubmitting(false)
+            setEmail('')
+            close()
+        }, 1000)
         // setIsSubmitting(false)
-        // setEmail('')
-        // close()
     }
     
   return (

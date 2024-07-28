@@ -20,9 +20,9 @@ const Home = async() => {
           <HeroCarousel/>
         </div>
       </section>
-      <section className='w-full h-screen px-6 py-24 md:px-20 mt-56  lg:-mt-32'>
+      <section className='w-full h-screen px-6 py-24 md:px-20 mt-56  lg:-mt-32 '>
         <h2 className='text-3xl font-extrabold text-[#93DB2B] mb-6'>Trending</h2>
-        <div className='flex flex-wrap gap-x-8 gap-y-16'>
+        <div className='flex flex-wrap gap-x-8 gap-y-12 w-full items-center justify-center pb-8'>
           {allProducts?.map((product,index) => (
             <ProductCard key={product._id} product={product}/>
           ))}
