@@ -6,7 +6,7 @@ import {scrapeAmazonProduct} from "../scraper"
 import  Product from "../models/product.model"
 import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utils"
 import { User } from "@/types"
-import { generateEmailBody } from "../nodemailder"
+
 export async function scarpeAndStoreProduct(productUrl: string){
     if(!productUrl) return
 
