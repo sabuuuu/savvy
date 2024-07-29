@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Savvy
 
-## Getting Started
+Savvy is a web application built using Next.js 14 designed to track Amazon product prices and send email notifications when products are back in stock or reach their lowest price. The application utilizes web scraping techniques and CRON jobs to monitor price changes and alert users.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Price Tracking**: Monitor Amazon product prices.
+- **Email Notifications**: Get notified when a product is back in stock or reaches its lowest price.
+- **User-friendly Interface**: Simple and intuitive UI for easy tracking and notifications.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 14**: Framework for server-side rendering and static site generation.
+- **CRON**: Schedule tasks to run at specific intervals.
+- **Node-fetch**: Fetch API for making HTTP requests.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+1. **Track a Product**:
+   Enter the Amazon product URL to start tracking its price.
+   
+2. **Set Notifications**:
+   Specify your email address to receive notifications when the product is back in stock or reaches its target price.
 
-To learn more about Next.js, take a look at the following resources:
+3. **View Tracked Products**:
+   See a list of all products you are currently tracking.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What I Learned
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js**: Gained a deeper understanding of server-side rendering and static site generation.
+- **CRON Jobs**: Learned how to schedule and manage tasks at specific intervals.
+- **Web Scraping**: Implemented techniques to extract data from Amazon product pages.
+- **API Integration**: Utilized `node-fetch` to make HTTP requests to external APIs for currency conversion.
+- **Tailwind CSS**: Applied utility-first CSS framework for consistent and responsive styling.
+- **Email Notifications**: Set up email notifications to alert users about product price changes.
